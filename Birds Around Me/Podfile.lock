@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.1.0)
+  - Decodable (0.3.3)
   - KeychainAccess (2.2.1)
   - Realm (0.96.2):
     - Realm/Headers (= 0.96.2)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Decodable
   - KeychainAccess
   - RealmSwift
   - SDWebImage
@@ -20,10 +22,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 415bd7f56197722978759078486689f7ef913dce
+  Decodable: 5997b5e329e651f828dfcd458216b4c8286867cf
   KeychainAccess: 3b13c8264b5985dbaeaaf019a7941a912b5690c2
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
-COCOAPODS: 0.39.0
+COCOAPODS: 0.38.2

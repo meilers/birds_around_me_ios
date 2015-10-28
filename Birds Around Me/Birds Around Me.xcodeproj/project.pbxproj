@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		286789D490345698F6334F1E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE067AE341E249ABD1FFBD2B /* Pods.framework */; };
+		5E33F1CA1BE1625D0079EA78 /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1C91BE1625D0079EA78 /* Observation.swift */; };
+		5E33F1CF1BE165770079EA78 /* AlamofireRequest+Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */; };
+		65B09B5A46C5389A74DABA1D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE067AE341E249ABD1FFBD2B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA455EC81BE07AA100293002 /* EbirdRouter.swift */; };
 		FADC784E1BE0561500CB0A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC784D1BE0561500CB0A28 /* AppDelegate.swift */; };
 		FADC78501BE0561500CB0A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC784F1BE0561500CB0A28 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E33F1C91BE1625D0079EA78 /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observation.swift; path = Classes/Models/Observation.swift; sourceTree = "<group>"; };
+		5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Responses.swift"; path = "Classes/Webservices/AlamofireRequest+Responses.swift"; sourceTree = "<group>"; };
 		87D7D865CC8E055CC465242D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE067AE341E249ABD1FFBD2B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA455EC81BE07AA100293002 /* EbirdRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EbirdRouter.swift; path = Classes/Webservices/EbirdRouter.swift; sourceTree = "<group>"; };
@@ -35,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				286789D490345698F6334F1E /* Pods.framework in Frameworks */,
+				65B09B5A46C5389A74DABA1D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +77,7 @@
 		FA455EC41BE07A0600293002 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E33F1C91BE1625D0079EA78 /* Observation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 		FA455EC71BE07A3500293002 /* Webservices */ = {
 			isa = PBXGroup;
 			children = (
+				5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */,
 				FA455EC81BE07AA100293002 /* EbirdRouter.swift */,
 			);
 			name = Webservices;
@@ -253,9 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E33F1CA1BE1625D0079EA78 /* Observation.swift in Sources */,
 				FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */,
 				FADC78501BE0561500CB0A28 /* ViewController.swift in Sources */,
 				FADC784E1BE0561500CB0A28 /* AppDelegate.swift in Sources */,
+				5E33F1CF1BE165770079EA78 /* AlamofireRequest+Responses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Birds Around Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sobremesa.Birds-Around-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -382,6 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Birds Around Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sobremesa.Birds-Around-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
