@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import Decodable
 
-class Observation:Object, Decodable {
+class Sighting:Object, Decodable {
     
     enum EncryptionError: ErrorType {
         case Empty
@@ -38,7 +38,7 @@ class Observation:Object, Decodable {
     }
     
     class func decode(json: AnyObject) throws -> Self {
-        return try self.init(comName: json => "comName", sciName: "", obsDt: "", howMany: nil, locID: nil, locationPrivate: nil, locName: nil, lat: 0.0, lng: 0.0, obsReviewed: nil, obsValid: nil)
+        return try self.init(comName: json => "comName", sciName: json => "sciName", obsDt: json => "obsDt", howMany: try? json => "howMany", locID: try? json => "locID", locationPrivate: try? json => "locationPrivate", locName: try? json => "locName", lat: json => "lat", lng: json => "lng", obsReviewed: json => "obsReviewed", obsValid: json => "obsValid")
     }
     
 //    public class func decode(json: AnyObject) throws -> Self {
