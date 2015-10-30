@@ -27,13 +27,23 @@ class SightingsManager {
                 let result = response.result.value
                 
                 if let sightings = result {
-                    let realm = try! Realm()
                     
-                    // Delete all objects from the realm
-                    try! realm.write {
-                        realm.delete(realm.objects(Sighting))
-                        realm.add(sightings)
+                    // Query it from any thread
+                    dispatch_async(dispatch_queue_create("background", nil)) {
+                        let realm = try! Realm()
+                        
+                        // Delete all objects from the realm
+                        do{
+                            try realm.write {
+                                realm.delete(realm.objects(Sighting))
+                                realm.add(sightings)
+                            }
+                        } catch {
+                            print(error)
+                        }
                     }
+                    
+
                     
                 }
         }
