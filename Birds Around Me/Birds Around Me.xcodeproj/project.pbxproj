@@ -11,6 +11,7 @@
 		5E33F1CF1BE165770079EA78 /* AlamofireRequest+Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */; };
 		5E33F1D41BE3D7750079EA78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1D31BE3D7750079EA78 /* AppDelegate.swift */; };
 		5E33F1D61BE3D77E0079EA78 /* SightingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1D51BE3D77E0079EA78 /* SightingsViewController.swift */; };
+		5E33F1DB1BE3E3790079EA78 /* SightingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1DA1BE3E3790079EA78 /* SightingCollectionViewCell.swift */; };
 		65B09B5A46C5389A74DABA1D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE067AE341E249ABD1FFBD2B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AC8494F01BE1B858000173D9 /* SightingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8494EF1BE1B858000173D9 /* SightingsManager.swift */; };
 		FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA455EC81BE07AA100293002 /* EbirdRouter.swift */; };
@@ -24,6 +25,7 @@
 		5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Responses.swift"; path = "Classes/Webservices/AlamofireRequest+Responses.swift"; sourceTree = "<group>"; };
 		5E33F1D31BE3D7750079EA78 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		5E33F1D51BE3D77E0079EA78 /* SightingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SightingsViewController.swift; path = Classes/Controllers/SightingsViewController.swift; sourceTree = "<group>"; };
+		5E33F1DA1BE3E3790079EA78 /* SightingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SightingCollectionViewCell.swift; path = Classes/Views/SightingCollectionViewCell.swift; sourceTree = "<group>"; };
 		87D7D865CC8E055CC465242D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AC8494EF1BE1B858000173D9 /* SightingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SightingsManager.swift; path = Classes/Managers/SightingsManager.swift; sourceTree = "<group>"; };
 		CE067AE341E249ABD1FFBD2B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,14 @@
 				5E33F1D51BE3D77E0079EA78 /* SightingsViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5E33F1D71BE3E3290079EA78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E33F1DA1BE3E3790079EA78 /* SightingCollectionViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		67D84A5163611B97F3D217D8 /* Pods */ = {
@@ -139,6 +149,7 @@
 		FADC784C1BE0561500CB0A28 /* Birds Around Me */ = {
 			isa = PBXGroup;
 			children = (
+				5E33F1D71BE3E3290079EA78 /* Views */,
 				FA455EC31BE079FF00293002 /* Classes */,
 				FADC78511BE0561500CB0A28 /* Main.storyboard */,
 				FADC78541BE0561500CB0A28 /* Assets.xcassets */,
@@ -273,6 +284,7 @@
 			files = (
 				5E33F1D41BE3D7750079EA78 /* AppDelegate.swift in Sources */,
 				AC8494F01BE1B858000173D9 /* SightingsManager.swift in Sources */,
+				5E33F1DB1BE3E3790079EA78 /* SightingCollectionViewCell.swift in Sources */,
 				5E33F1CA1BE1625D0079EA78 /* Sighting.swift in Sources */,
 				FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */,
 				5E33F1CF1BE165770079EA78 /* AlamofireRequest+Responses.swift in Sources */,

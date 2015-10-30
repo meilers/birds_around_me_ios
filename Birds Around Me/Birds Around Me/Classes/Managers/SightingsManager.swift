@@ -27,7 +27,6 @@ class SightingsManager {
                 let result = response.result.value
                 
                 if let sightings = result {
-                    
                     // Query it from any thread
                     dispatch_async(dispatch_queue_create("background", nil)) {
                         let realm = try! Realm()
@@ -42,9 +41,6 @@ class SightingsManager {
                             print(error)
                         }
                     }
-                    
-
-                    
                 }
         }
     }

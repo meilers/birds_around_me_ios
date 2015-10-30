@@ -8,20 +8,32 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    let identifier = "SightingCellIdentifier"
     @IBOutlet weak var collectionView: UICollectionView!
+
+    // Realm
+    let realm = try! Realm()
+    let sightings = try! Realm().objects(Sighting).sorted("obsDt")
+    var notificationToken: NotificationToken?
+    
     var locationManager:CLLocationManager! = CLLocationManager()
 
-    let identifier = "SightingCellIdentifier"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initCollectionView()
-        initLocationManager()
+        setupCollectionView()
+        setupLocationManager()
+        
+        // Set realm notification block
+        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            self.collectionView.reloadData()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,19 +49,19 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     }
     
     
-    func initCollectionView() {
+    func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top:0,left:0,bottom:0,right:0)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 2
         
         collectionView.collectionViewLayout = layout
     }
     
-    func initLocationManager() {
+    func setupLocationManager() {
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
         
@@ -93,26 +105,22 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     
     // CollectionView Data Source
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 120
+        let test = self.sightings.count
+        return self.sightings.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! SightingCollectionViewCell
+        let sighting = self.sightings[indexPath.row]
         
-        if( indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor.redColor()
-        } else {
-            cell.backgroundColor = UIColor.blackColor()
-
-        }
+        cell.configure(sighting)
         
         return cell
     }
     
     // Delegate
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
-    {
-        return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width/2-1, height: collectionView.frame.size.width/2-1)
     }
     
     
