@@ -11,12 +11,11 @@ import CoreLocation
 
 class SightingsViewController: UIViewController, CLLocationManagerDelegate {
 
-    let locationManager = CLLocationManager()
+    var locationManager:CLLocationManager! = CLLocationManager()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -24,24 +23,49 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate {
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
         
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "applicationDidBecomeActive:",
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        startLocationManager()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        stopLocationManager()
+    }
+    
+    func applicationDidBecomeActive(notification: NSNotification) {
+        startLocationManager()
+    }
+    
+    
+    func startLocationManager(){
+        locationManager = CLLocationManager()
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager.startUpdatingLocation()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func stopLocationManager() {
+        
+        locationManager?.stopUpdatingLocation()
+        locationManager = nil
     }
-
-
+    
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last
         
         if let newCoordinate = newLocation?.coordinate {
             SightingsManager.sharedInstance.syncSightingsForLocation(newCoordinate)
+            stopLocationManager()
         }
     }
 }

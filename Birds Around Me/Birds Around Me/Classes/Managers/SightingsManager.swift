@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Alamofire
+import RealmSwift
 
 class SightingsManager {
     
@@ -23,10 +24,18 @@ class SightingsManager {
         Alamofire.request(EbirdRouter.DataObsGeoRecent(Double(location.latitude), Double(location.longitude), 50, 5, 500, "en_US", "json"))
             .responseCollection { (response: Response<[Sighting], NSError>) in
                 guard response.result.error == nil else { return }
+                let result = response.result.value
                 
-                let bites = response.result.value
-                
-                print(bites)
+                if let sightings = result {
+                    let realm = try! Realm()
+                    
+                    // Delete all objects from the realm
+                    try! realm.write {
+                        realm.delete(realm.objects(Sighting))
+                        realm.add(sightings)
+                    }
+                    
+                }
         }
     }
 
