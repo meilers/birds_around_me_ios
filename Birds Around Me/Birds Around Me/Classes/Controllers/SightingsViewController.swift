@@ -17,7 +17,7 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
 
     // Realm
     let realm = try! Realm()
-    let sightings = try! Realm().objects(Sighting).sorted("obsDt")
+    let sightings = try! Realm().objects(Sighting).sorted("obsDt", ascending: false)
     var notificationToken: NotificationToken?
     
     var locationManager:CLLocationManager! = CLLocationManager()
@@ -33,6 +33,14 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
         // Set realm notification block
         notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
             self.collectionView.reloadData()
+        }
+        
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd hh:mm"
+        
+        for s in sightings {
+            print("name: \(s.comName), obsDt: \(formatter.stringFromDate(s.obsDt))")
         }
     }
     

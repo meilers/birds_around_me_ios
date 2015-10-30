@@ -43,22 +43,12 @@ class Sighting:Object, Decodable {
         self.obsValid = obsValid ?? false
         
         let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH-mm"
+        formatter.dateFormat = "yyyy-MM-dd hh-mm"
         self.obsDt = formatter.dateFromString(obsDt) ?? NSDate()
     }
     
     class func decode(json: AnyObject) throws -> Self {
         return try self.init(comName: json => "comName", sciName: json => "sciName", obsDt: json => "obsDt", howMany: try? json => "howMany", locID: try? json => "locID", locationPrivate: try? json => "locationPrivate", locName: try? json => "locName", lat: json => "lat", lng: json => "lng", obsReviewed: json => "obsReviewed", obsValid: json => "obsValid")
     }
-    
-//    public class func decode(json: AnyObject) throws -> Self {
-//        let string = try String.decode(json)
-//        
-//        guard let date = ISO8601DateFormatter.dateFromString(string) else {
-//            throw NSDateDecodingError.InvalidStringFormat
-//        }
-//        
-//        return self.init(timeIntervalSince1970: date.timeIntervalSince1970)
-//    }
     
 }
