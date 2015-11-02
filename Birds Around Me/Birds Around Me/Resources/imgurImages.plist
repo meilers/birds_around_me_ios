@@ -32,16 +32,226 @@
 	<string>zqD8E59</string>
 	<key>Botaurus lentiginosus</key>
 	<string>U1ste3w</string>
+	<key>Calidris himantopus</key>
+	<string>SFGzEnz</string>
 	<key>Branta canadensis</key>
 	<string>opybRbq</string>
+	<key>Calidris maritima</key>
+	<string>OmzPlXH</string>
 	<key>Bucephala clangula</key>
 	<string>vY2Vccf</string>
+	<key>Calidris ptilocnemis</key>
+	<string>SgF5VVB</string>
+	<key>Calidris pusilla</key>
+	<string>whPCd5U</string>
+	<key>Calidris melanotos</key>
+	<string>VBaVL6P</string>
+	<key>Calidris fuscicollis</key>
+	<string>ynHzXEY</string>
+	<key>Calidris mauri</key>
+	<string>feOIR1R</string>
+	<key>Calidris minutilla</key>
+	<string>8PMAvT5</string>
+	<key>Calidris subruficollis</key>
+	<string>1QOro6h</string>
+	<key>Coccothraustes vespertinus</key>
+	<string>c6X7rY3</string>
+	<key>Cygnus columbianus</key>
+	<string>EMkkEcW</string>
+	<key>Corvus hawaiiensis</key>
+	<string>sJK2B1t</string>
+	<key>Cyanocorax yncas</key>
+	<string>sB7ffUv</string>
+	<key>Cynanthus latirostris</key>
+	<string>d8FGWJN</string>
+	<key>Chaetura vauxi</key>
+	<string>OG4xdLH</string>
+	<key>Cygnus olor</key>
+	<string>HaiBjWg</string>
+	<key>Contopus sordidulus</key>
+	<string>fPKSR9u</string>
+	<key>Cyanocitta cristata</key>
+	<string>uJl9sa0</string>
+	<key>Corvus cryptoleucus</key>
+	<string>YtW8EEr</string>
+	<key>Cypseloides niger</key>
+	<string>N2DImTe</string>
+	<key>Cygnus buccinator</key>
+	<string>VBisH0U</string>
+	<key>Cyanocitta stelleri</key>
+	<string>YMKrpfA</string>
+	<key>Cyrtonyx montezumae</key>
+	<string>Xi5mQlI</string>
+	<key>Coturnicops noveboracensis</key>
+	<string>GaJQWLz</string>
+	<key>Copsychus malabaricus</key>
+	<string>xdcyXia</string>
+	<key>Crotophaga ani</key>
+	<string>3SIhOQ8</string>
+	<key>Corvus ossifragus</key>
+	<string>zDYIFBJ</string>
+	<key>Corvus corax</key>
+	<string>4RxInNs</string>
+	<key>Corvus brachyrhynchos</key>
+	<string>m0uqQua</string>
+	<key>Crotophaga sulcirostris</key>
+	<string>dXkYO3z</string>
+	<key>Chen rossii</key>
+	<string>h41e3jQ</string>
+	<key>Coragyps atratus</key>
+	<string>NWJcNlF</string>
+	<key>Contopus virens</key>
+	<string>gM9YGyn</string>
+	<key>Columba livia</key>
+	<string>eNQd9fc</string>
+	<key>Columbina passerina</key>
+	<string>zH4nZmb</string>
+	<key>Conuropsis carolinensis</key>
+	<string>92kw7XR</string>
+	<key>Coccyzus americanus</key>
+	<string>Spj4l4r</string>
+	<key>Corvus caurinus</key>
+	<string>wvixBpz</string>
+	<key>Contopus pertinax</key>
+	<string>e3LfITg</string>
+	<key>Coccyzus minor</key>
+	<string>PdR8M7C</string>
+	<key>Columbina inca</key>
+	<string>KwK9BN4</string>
+	<key>Contopus cooperi</key>
+	<string>AMSSWUT</string>
+	<key>Colaptes chrysoides</key>
+	<string>IqoeCAi</string>
+	<key>Colinus virginianus</key>
+	<string>mPHGzhM</string>
+	<key>Cardellina canadensis</key>
+	<string>MIgAk0R</string>
+	<key>Cistothorus palustris</key>
+	<string>khRbOWd</string>
+	<key>Cinclus mexicanus</key>
+	<string>omvAht0</string>
+	<key>Coccyzus erythropthalmus</key>
+	<string>Q7wzlni</string>
+	<key>Chloroceryle americana</key>
+	<string>EUUn8xt</string>
+	<key>Chondestes grammacus</key>
+	<string>EcFT4o8</string>
+	<key>Circus cyaneus</key>
+	<string>XDbWTWQ</string>
+	<key>Cistothorus platensis</key>
+	<string>U3NvMWy</string>
+	<key>Colaptes auratus</key>
+	<string>1wGVadt</string>
+	<key>Charadrius montanus</key>
+	<string>e6C5rtD</string>
+	<key>Chroicocephalus philadelphia</key>
+	<string>LY51Gnx</string>
+	<key>Clangula hyemalis</key>
+	<string>eg34JTY</string>
+	<key>Chordeiles minor</key>
+	<string>HSHVFfI</string>
+	<key>Chordeiles acutipennis</key>
+	<string>NjUV3Td</string>
+	<key>Calamospiza melanocorys</key>
+	<string>8r74oka</string>
+	<key>Chlidonias niger</key>
+	<string>dId6hZG</string>
+	<key>Chasiempis sandwichensis</key>
+	<string>clfy7IF</string>
+	<key>Chordeiles gundlachii</key>
+	<string>GDhBBst</string>
+	<key>Charadrius semipalmatus</key>
+	<string>nmmqUVd</string>
+	<key>Chen canagica</key>
+	<string>Gm1iQny</string>
+	<key>Chaetura pelagica</key>
+	<string>AYmac7a</string>
+	<key>Chen caerulescens</key>
+	<string>HCzuiBI</string>
+	<key>Charadrius wilsonia</key>
+	<string>GvFIwoe</string>
+	<key>Cardinalis cardinalis</key>
+	<string>0PbttWM</string>
+	<key>Charadrius melodus</key>
+	<string>teoWlwr</string>
+	<key>Cardellina rubrifrons</key>
+	<string>y5oBqu7</string>
+	<key>Charadrius nivosus</key>
+	<string>FfE5ePo</string>
+	<key>Catharus fuscescens</key>
+	<string>bBLnhUY</string>
+	<key>Cardinalis sinuatus</key>
+	<string>ifVr1hg</string>
+	<key>Chamaea fasciata</key>
+	<string>3QrrUYo</string>
+	<key>Charadrius vociferus</key>
+	<string>uRp80Es</string>
+	<key>Calcarius ornatus</key>
+	<string>gbdXFOq</string>
+	<key>Certhia americana</key>
+	<string>svB1sN3</string>
+	<key>Cepphus grylle</key>
+	<string>Eg5T324</string>
+	<key>Cerorhinca monocerata</key>
+	<string>g4pLA9O</string>
+	<key>Catharus ustulatus</key>
+	<string>3HhrSxH</string>
+	<key>Centrocercus urophasianus</key>
+	<string>2i7aqQ2</string>
+	<key>Cepphus columba</key>
+	<string>Rp75tlT</string>
+	<key>Catherpes mexicanus</key>
+	<string>VhPNydp</string>
+	<key>Cardellina pusilla</key>
+	<string>hKHK2uH</string>
+	<key>Catharus guttatus</key>
+	<string>MqXjXIl</string>
+	<key>Catharus bicknelli</key>
+	<string>bBLnhUY</string>
+	<key>Catharus minimus</key>
+	<string>eSYCWXy</string>
+	<key>Calidris canutus</key>
+	<string>wM5LHoK</string>
+	<key>Caracara cheriway</key>
+	<string>YOOrK6C</string>
+	<key>Calothorax lucifer</key>
+	<string>zgch8xa</string>
+	<key>Campylorhynchus brunneicapillus</key>
+	<string>epgdRP8</string>
+	<key>Calypte anna</key>
+	<string>1uvdGtX</string>
+	<key>Camptostoma imberbe</key>
+	<string>gIQq1Vw</string>
+	<key>Calidris alpina</key>
+	<string>gxDhGws</string>
+	<key>Campephilus principalis</key>
+	<string>LH3O7zO</string>
+	<key>Calypte costae</key>
+	<string>gTGRhV1</string>
 	<key>Buteo plagiatus</key>
 	<string>6DzCjU3</string>
+	<key>Calidris bairdii</key>
+	<string>I2Kr08f</string>
+	<key>Callipepla californica</key>
+	<string>2nxa6au</string>
+	<key>Calidris alba</key>
+	<string>oavJ7ER</string>
+	<key>Calidris virgata</key>
+	<string>rDXW6v1</string>
 	<key>Buteo albicaudatus</key>
 	<string>lsUc5mh</string>
+	<key>Calcarius lapponicus</key>
+	<string>vKgdBOt</string>
+	<key>Callipepla squamata</key>
+	<string>gY6Uxwa</string>
+	<key>Cathartes aura</key>
+	<string>Q5Urnrd</string>
 	<key>Buteo regalis</key>
 	<string>xeqXrbR</string>
+	<key>Calcarius pictus</key>
+	<string>NKCxUVu</string>
+	<key>Callipepla gambelii</key>
+	<string>cPEjhNi</string>
 	<key>Buteogallus anthracinus</key>
 	<string>vnwjI2Y</string>
 	<key>Butorides virescens</key>
