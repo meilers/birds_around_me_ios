@@ -17,11 +17,8 @@ class SightingsManager {
     
     func syncSightingsForLocation(location:CLLocationCoordinate2D) {
         
-        print("latitude: \(Double(location.latitude))")
-        print("longitude: \(Double(location.longitude))")
-
                 
-        Alamofire.request(EbirdRouter.DataObsGeoRecent(Double(location.latitude), Double(location.longitude), 50, 5, 500, "en_US", "json"))
+        Alamofire.request(EbirdRouter.DataObsGeoRecent(37.33233141 /*Double(location.latitude)*/, -122.0312186 /*Double(location.longitude)*/, 50, 5, 500, "en_US", "json"))
             .responseCollection { (response: Response<[Sighting], NSError>) in
                 guard response.result.error == nil else { return }
                 let result = response.result.value

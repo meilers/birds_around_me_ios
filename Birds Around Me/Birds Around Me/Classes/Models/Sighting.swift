@@ -43,7 +43,7 @@ class Sighting:Object, Decodable {
         self.obsValid = obsValid ?? false
         
         let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd hh-mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
         self.obsDt = formatter.dateFromString(obsDt) ?? NSDate()
     }
     

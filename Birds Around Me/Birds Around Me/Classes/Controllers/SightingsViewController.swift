@@ -21,27 +21,14 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     var notificationToken: NotificationToken?
     
     var locationManager:CLLocationManager! = CLLocationManager()
-
+    var lastCurrentLocation:CLLocation?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCollectionView()
+        setupUI()
         setupLocationManager()
-        
-        // Set realm notification block
-        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
-            self.collectionView.reloadData()
-        }
-        
-        
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd hh:mm"
-        
-        for s in sightings {
-            print("name: \(s.comName), obsDt: \(formatter.stringFromDate(s.obsDt))")
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,6 +44,16 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     }
     
     
+    func setupUI() {
+        self.automaticallyAdjustsScrollViewInsets = false
+        setupNavBar()
+        setupCollectionView()
+    }
+    
+    func setupNavBar() {
+        updateNavBar(title: "Title", subTitle: "SubTitle")
+    }
+    
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -65,9 +62,53 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
         layout.sectionInset = UIEdgeInsets(top:0,left:0,bottom:0,right:0)
         layout.minimumInteritemSpacing = 2
         layout.minimumLineSpacing = 2
-        
         collectionView.collectionViewLayout = layout
+        
+        // Set realm notification block
+        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            self.collectionView.reloadData()
+        }
     }
+    
+    func updateNavBar(title title:String, subTitle:String) {
+        setTitle(title, subtitle: subTitle)
+    }
+    
+    func setTitle(title:String, subtitle:String) {
+        //Create a label programmatically and give it its property's
+        let titleLabel = UILabel(frame: CGRectMake(0, 0, 0, 0)) //x, y, width, height where y is to offset from the view center
+        titleLabel.backgroundColor = UIColor.clearColor()
+        titleLabel.textColor = UIColor.blackColor()
+        titleLabel.font = UIFont.boldSystemFontOfSize(20)
+        titleLabel.text = title
+        titleLabel.sizeToFit()
+        
+        //Create a label for the Subtitle
+        // x, y, width, height where x is set to be half the size of the title (100/4 = 25%) as it starts all the way left.
+        let subtitleLabel = UILabel(frame: CGRectMake(0, 22, 0, 0))
+        subtitleLabel.backgroundColor = UIColor.clearColor()
+        subtitleLabel.textColor = UIColor.lightGrayColor()
+        subtitleLabel.font = UIFont.systemFontOfSize(12)
+        subtitleLabel.text = subtitle
+        subtitleLabel.sizeToFit()
+        
+        /*Create a view and add titleLabel and subtitleLabel as subviews setting
+        * its width to the bigger of both
+        * this will crash the program if subtitle is bigger then title
+        */
+        let titleView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 30))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        
+        titleLabel.frame.origin.x = 0
+        subtitleLabel.frame.origin.x = 0
+        
+        
+        
+        self.navigationItem.titleView = titleView
+    }
+    
+    
     
     func setupLocationManager() {
         
@@ -107,6 +148,9 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
         let newLocation = locations.last
         
         if let newCoordinate = newLocation?.coordinate {
+            self.lastCurrentLocation = newLocation
+            self.collectionView.reloadData()
+            
             SightingsManager.sharedInstance.syncSightingsForLocation(newCoordinate)
             stopLocationManager()
         }
@@ -115,7 +159,6 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     
     // CollectionView Data Source
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let test = self.sightings.count
         return self.sightings.count
     }
     
@@ -123,7 +166,7 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! SightingCollectionViewCell
         let sighting = self.sightings[indexPath.row]
         
-        cell.configure(sighting)
+        cell.configure(sighting, currentLocation:self.lastCurrentLocation)
         
         return cell
     }

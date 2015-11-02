@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E20802D1BE7CCD8003F8BB7 /* LocationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20802C1BE7CCD8003F8BB7 /* LocationUtility.swift */; };
 		5E33F1CA1BE1625D0079EA78 /* Sighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1C91BE1625D0079EA78 /* Sighting.swift */; };
 		5E33F1CF1BE165770079EA78 /* AlamofireRequest+Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */; };
 		5E33F1D41BE3D7750079EA78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1D31BE3D7750079EA78 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E20802C1BE7CCD8003F8BB7 /* LocationUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationUtility.swift; path = Classes/Utilities/LocationUtility.swift; sourceTree = "<group>"; };
 		5E33F1C91BE1625D0079EA78 /* Sighting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sighting.swift; path = Classes/Models/Sighting.swift; sourceTree = "<group>"; };
 		5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AlamofireRequest+Responses.swift"; path = "Classes/Webservices/AlamofireRequest+Responses.swift"; sourceTree = "<group>"; };
 		5E33F1D31BE3D7750079EA78 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E20802B1BE7CC3E003F8BB7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5E20802C1BE7CCD8003F8BB7 /* LocationUtility.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		5E33F1D21BE3D7460079EA78 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +106,7 @@
 				5E33F1D21BE3D7460079EA78 /* Controllers */,
 				FA455EC61BE07A1600293002 /* Managers */,
 				FA455EC41BE07A0600293002 /* Models */,
+				5E20802B1BE7CC3E003F8BB7 /* Utilities */,
 				5E33F1D71BE3E3290079EA78 /* Views */,
 				FA455EC71BE07A3500293002 /* Webservices */,
 			);
@@ -289,6 +300,7 @@
 				AC8494F01BE1B858000173D9 /* SightingsManager.swift in Sources */,
 				FA1D083E1BE6913500374E8F /* ImagesManager.swift in Sources */,
 				5E33F1DB1BE3E3790079EA78 /* SightingCollectionViewCell.swift in Sources */,
+				5E20802D1BE7CCD8003F8BB7 /* LocationUtility.swift in Sources */,
 				5E33F1CA1BE1625D0079EA78 /* Sighting.swift in Sources */,
 				FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */,
 				5E33F1CF1BE165770079EA78 /* AlamofireRequest+Responses.swift in Sources */,

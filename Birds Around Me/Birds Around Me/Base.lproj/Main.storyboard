@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="muZ-Ml-C67">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Sightings View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SightingsViewController" customModule="Birds_Around_Me" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkq-cc-GAp">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fda-pt-gCo">
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SightingCellIdentifier" id="mJR-TC-MA6" customClass="SightingCollectionViewCell" customModule="Birds_Around_Me" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="293" height="262"/>
+                                        <rect key="frame" x="0.0" y="64" width="293" height="262"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="262"/>
@@ -46,6 +46,18 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1l-eH-go0" userLabel="Date Label">
+                                                    <rect key="frame" x="8" y="233" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJU-iQ-cIw" userLabel="Distance Label">
+                                                    <rect key="frame" x="243" y="233" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -53,17 +65,23 @@
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pJU-iQ-cIw" secondAttribute="trailing" constant="8" id="2W4-nX-99f"/>
+                                            <constraint firstItem="u1l-eH-go0" firstAttribute="leading" secondItem="mJR-TC-MA6" secondAttribute="leading" constant="8" id="7c1-wf-wkK"/>
+                                            <constraint firstAttribute="bottom" secondItem="pJU-iQ-cIw" secondAttribute="bottom" constant="8" id="KMf-Qh-W17"/>
                                             <constraint firstItem="QzQ-hn-Qod" firstAttribute="leading" secondItem="mJR-TC-MA6" secondAttribute="leading" id="O2T-wN-2Nl"/>
                                             <constraint firstItem="oc6-0g-FGH" firstAttribute="centerY" secondItem="mJR-TC-MA6" secondAttribute="centerY" id="Sk3-Pv-wat"/>
                                             <constraint firstAttribute="bottom" secondItem="QzQ-hn-Qod" secondAttribute="bottom" id="Z3J-zB-GdG"/>
                                             <constraint firstAttribute="trailing" secondItem="QzQ-hn-Qod" secondAttribute="trailing" id="Z9J-wK-zdD"/>
                                             <constraint firstItem="QzQ-hn-Qod" firstAttribute="top" secondItem="mJR-TC-MA6" secondAttribute="top" id="lbZ-jG-WJY"/>
+                                            <constraint firstAttribute="bottom" secondItem="u1l-eH-go0" secondAttribute="bottom" constant="8" id="pyD-0w-zbP"/>
                                             <constraint firstAttribute="trailing" secondItem="oc6-0g-FGH" secondAttribute="trailing" constant="8" id="s2G-zC-UC4"/>
                                             <constraint firstItem="oc6-0g-FGH" firstAttribute="leading" secondItem="mJR-TC-MA6" secondAttribute="leading" constant="8" id="vtz-F1-Igw"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="birdImageView" destination="QzQ-hn-Qod" id="LsY-e6-Bnr"/>
                                             <outlet property="comNameLabel" destination="oc6-0g-FGH" id="hUz-nB-NwX"/>
+                                            <outlet property="dateLabel" destination="u1l-eH-go0" id="hQh-5y-51W"/>
+                                            <outlet property="distanceLabel" destination="pJU-iQ-cIw" id="uYe-Km-SFa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -78,11 +96,30 @@
                             <constraint firstItem="xkq-cc-GAp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pDL-n4-icq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="rYA-Cj-xYc"/>
                     <connections>
                         <outlet property="collectionView" destination="xkq-cc-GAp" id="iwQ-OQ-0Oi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560" y="511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gYG-J2-ijK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="muZ-Ml-C67" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="42y-tG-bgA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Fnf-91-j0T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Az-bK-gcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748" y="511"/>
         </scene>
