@@ -70,8 +70,7 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     }
     
     func setupLocationManager() {
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
+        
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -85,7 +84,10 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     
     
     func startLocationManager(){
-        locationManager = CLLocationManager()
+        
+        if locationManager == nil {
+            locationManager = CLLocationManager()
+        }
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self

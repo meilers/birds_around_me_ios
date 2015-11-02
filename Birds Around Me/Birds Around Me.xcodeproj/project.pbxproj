@@ -12,8 +12,11 @@
 		5E33F1D41BE3D7750079EA78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1D31BE3D7750079EA78 /* AppDelegate.swift */; };
 		5E33F1D61BE3D77E0079EA78 /* SightingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1D51BE3D77E0079EA78 /* SightingsViewController.swift */; };
 		5E33F1DB1BE3E3790079EA78 /* SightingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F1DA1BE3E3790079EA78 /* SightingCollectionViewCell.swift */; };
-		65B09B5A46C5389A74DABA1D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE067AE341E249ABD1FFBD2B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		65B09B5A46C5389A74DABA1D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE067AE341E249ABD1FFBD2B /* Pods.framework */; };
 		AC8494F01BE1B858000173D9 /* SightingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8494EF1BE1B858000173D9 /* SightingsManager.swift */; };
+		FA1D083A1BE663D800374E8F /* ImgurRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D08391BE663D800374E8F /* ImgurRouter.swift */; };
+		FA1D083C1BE690C200374E8F /* imgurImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1D083B1BE690C200374E8F /* imgurImages.plist */; };
+		FA1D083E1BE6913500374E8F /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D083D1BE6913500374E8F /* ImagesManager.swift */; };
 		FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA455EC81BE07AA100293002 /* EbirdRouter.swift */; };
 		FADC78531BE0561500CB0A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADC78511BE0561500CB0A28 /* Main.storyboard */; };
 		FADC78551BE0561500CB0A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADC78541BE0561500CB0A28 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		87D7D865CC8E055CC465242D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AC8494EF1BE1B858000173D9 /* SightingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SightingsManager.swift; path = Classes/Managers/SightingsManager.swift; sourceTree = "<group>"; };
 		CE067AE341E249ABD1FFBD2B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1D08391BE663D800374E8F /* ImgurRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImgurRouter.swift; path = Classes/Webservices/ImgurRouter.swift; sourceTree = "<group>"; };
+		FA1D083B1BE690C200374E8F /* imgurImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = imgurImages.plist; path = Resources/imgurImages.plist; sourceTree = "<group>"; };
+		FA1D083D1BE6913500374E8F /* ImagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagesManager.swift; path = Classes/Managers/ImagesManager.swift; sourceTree = "<group>"; };
 		FA455EC81BE07AA100293002 /* EbirdRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EbirdRouter.swift; path = Classes/Webservices/EbirdRouter.swift; sourceTree = "<group>"; };
 		FADC784A1BE0561500CB0A28 /* Birds Around Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Birds Around Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADC78521BE0561500CB0A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,10 +94,10 @@
 			children = (
 				5E33F1D31BE3D7750079EA78 /* AppDelegate.swift */,
 				5E33F1D21BE3D7460079EA78 /* Controllers */,
-				FA455EC71BE07A3500293002 /* Webservices */,
 				FA455EC61BE07A1600293002 /* Managers */,
-				FA455EC51BE07A0E00293002 /* Controllers */,
 				FA455EC41BE07A0600293002 /* Models */,
+				5E33F1D71BE3E3290079EA78 /* Views */,
+				FA455EC71BE07A3500293002 /* Webservices */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -104,17 +110,11 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		FA455EC51BE07A0E00293002 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
 		FA455EC61BE07A1600293002 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				AC8494EF1BE1B858000173D9 /* SightingsManager.swift */,
+				FA1D083D1BE6913500374E8F /* ImagesManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -124,6 +124,7 @@
 			children = (
 				5E33F1CE1BE165770079EA78 /* AlamofireRequest+Responses.swift */,
 				FA455EC81BE07AA100293002 /* EbirdRouter.swift */,
+				FA1D08391BE663D800374E8F /* ImgurRouter.swift */,
 			);
 			name = Webservices;
 			sourceTree = "<group>";
@@ -149,12 +150,12 @@
 		FADC784C1BE0561500CB0A28 /* Birds Around Me */ = {
 			isa = PBXGroup;
 			children = (
-				5E33F1D71BE3E3290079EA78 /* Views */,
 				FA455EC31BE079FF00293002 /* Classes */,
 				FADC78511BE0561500CB0A28 /* Main.storyboard */,
 				FADC78541BE0561500CB0A28 /* Assets.xcassets */,
 				FADC78561BE0561500CB0A28 /* LaunchScreen.storyboard */,
 				FADC78591BE0561500CB0A28 /* Info.plist */,
+				FA1D083B1BE690C200374E8F /* imgurImages.plist */,
 			);
 			path = "Birds Around Me";
 			sourceTree = "<group>";
@@ -222,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADC78581BE0561500CB0A28 /* LaunchScreen.storyboard in Resources */,
+				FA1D083C1BE690C200374E8F /* imgurImages.plist in Resources */,
 				FADC78551BE0561500CB0A28 /* Assets.xcassets in Resources */,
 				FADC78531BE0561500CB0A28 /* Main.storyboard in Resources */,
 			);
@@ -283,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E33F1D41BE3D7750079EA78 /* AppDelegate.swift in Sources */,
+				FA1D083A1BE663D800374E8F /* ImgurRouter.swift in Sources */,
 				AC8494F01BE1B858000173D9 /* SightingsManager.swift in Sources */,
+				FA1D083E1BE6913500374E8F /* ImagesManager.swift in Sources */,
 				5E33F1DB1BE3E3790079EA78 /* SightingCollectionViewCell.swift in Sources */,
 				5E33F1CA1BE1625D0079EA78 /* Sighting.swift in Sources */,
 				FA455EC91BE07AA100293002 /* EbirdRouter.swift in Sources */,

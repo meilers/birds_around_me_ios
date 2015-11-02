@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -19,6 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkq-cc-GAp">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fda-pt-gCo">
                                     <size key="itemSize" width="293" height="262"/>
@@ -34,22 +35,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc6-0g-FGH">
-                                                    <rect key="frame" x="8" y="8" width="277" height="246"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QzQ-hn-Qod">
+                                                    <rect key="frame" x="0.0" y="0.0" width="293" height="262"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc6-0g-FGH">
+                                                    <rect key="frame" x="8" y="121" width="277" height="20"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="QzQ-hn-Qod" firstAttribute="leading" secondItem="mJR-TC-MA6" secondAttribute="leading" id="O2T-wN-2Nl"/>
                                             <constraint firstItem="oc6-0g-FGH" firstAttribute="centerY" secondItem="mJR-TC-MA6" secondAttribute="centerY" id="Sk3-Pv-wat"/>
+                                            <constraint firstAttribute="bottom" secondItem="QzQ-hn-Qod" secondAttribute="bottom" id="Z3J-zB-GdG"/>
+                                            <constraint firstAttribute="trailing" secondItem="QzQ-hn-Qod" secondAttribute="trailing" id="Z9J-wK-zdD"/>
+                                            <constraint firstItem="QzQ-hn-Qod" firstAttribute="top" secondItem="mJR-TC-MA6" secondAttribute="top" id="lbZ-jG-WJY"/>
                                             <constraint firstAttribute="trailing" secondItem="oc6-0g-FGH" secondAttribute="trailing" constant="8" id="s2G-zC-UC4"/>
                                             <constraint firstItem="oc6-0g-FGH" firstAttribute="leading" secondItem="mJR-TC-MA6" secondAttribute="leading" constant="8" id="vtz-F1-Igw"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="birdImageView" destination="QzQ-hn-Qod" id="LsY-e6-Bnr"/>
                                             <outlet property="comNameLabel" destination="oc6-0g-FGH" id="hUz-nB-NwX"/>
                                         </connections>
                                     </collectionViewCell>
