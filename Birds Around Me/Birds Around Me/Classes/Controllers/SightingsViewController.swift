@@ -10,7 +10,11 @@ import UIKit
 import CoreLocation
 import RealmSwift
 
-class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchResultsUpdating {
+    
+    @IBOutlet weak var searchView: UIView!
+    let searchController = UISearchController(searchResultsController: nil)
+    var refreshControl: UIRefreshControl!
 
     let identifier = "SightingCellIdentifier"
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,6 +22,8 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     // Realm
     let realm = try! Realm()
     let sightings = try! Realm().objects(Sighting).sorted("obsDt", ascending: false)
+    var filteredSightings = try! Realm().objects(Sighting).sorted("obsDt", ascending: false)
+    
     var notificationToken: NotificationToken?
     
     var locationManager:CLLocationManager! = CLLocationManager()
@@ -60,14 +66,28 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top:0,left:0,bottom:0,right:0)
-        layout.minimumInteritemSpacing = 2
-        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         collectionView.collectionViewLayout = layout
         
         // Set realm notification block
         notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            self.refreshControl.endRefreshing()
             self.collectionView.reloadData()
         }
+        
+        // Search
+        self.searchController.searchResultsUpdater = self
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.sizeToFit()
+        
+        self.searchView.addSubview(self.searchController.searchBar)
+        
+        
+        // Refresh control
+        refreshControl = UIRefreshControl()
+        self.collectionView.addSubview(refreshControl)
     }
     
     func updateNavBar(title title:String, subTitle:String) {
@@ -157,25 +177,58 @@ class SightingsViewController: UIViewController, CLLocationManagerDelegate, UICo
     }
     
     
-    // CollectionView Data Source
+    // CollectionView - Data Source
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (self.searchController.active) {
+            return self.filteredSightings.count
+        }
+        
         return self.sightings.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! SightingCollectionViewCell
-        let sighting = self.sightings[indexPath.row]
         
+        let sighting = self.searchController.active ? self.filteredSightings[indexPath.row] : self.sightings[indexPath.row]
         cell.configure(sighting, currentLocation:self.lastCurrentLocation)
         
         return cell
     }
     
-    // Delegate
+    // CollectionView - Delegate
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/2-1, height: collectionView.frame.size.width/2-1)
+        return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
+    }
+    
+    // Search - Delegate
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        guard let searchText = self.searchController.searchBar.text else { return }
+
+        let searchPredicate = NSPredicate(format: "comName CONTAINS[c] %@", searchText)
+        self.filteredSightings = realm.objects(Sighting).filter(searchPredicate)
+        self.collectionView.reloadData()
     }
     
     
+    // 
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        if refreshControl.refreshing {
+            startLocationManager()
+        }
+    }
+    
+    var timer: NSTimer!
+    
+    func doSomething() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(4.0, target: self, selector: "endOfWork", userInfo: nil, repeats: true)
+    }
+ 
+    func endOfWork() {
+        refreshControl.endRefreshing()
+        
+        timer.invalidate()
+        timer = nil
+    }
 }
 

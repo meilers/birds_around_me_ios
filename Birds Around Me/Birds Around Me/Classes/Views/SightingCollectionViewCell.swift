@@ -42,7 +42,7 @@ class SightingCollectionViewCell: UICollectionViewCell {
             imgurUrl = "http://i.imgur.com/\(imgurImage).jpg"
         }
         
-//        self.birdImageView.sd_setImageWithURL(NSURL(string:imgurUrl))
+        self.birdImageView.sd_setImageWithURL(NSURL(string:imgurUrl))
         
         
         
